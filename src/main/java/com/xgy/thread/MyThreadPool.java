@@ -6,22 +6,23 @@ package com.xgy.thread;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 
 public class MyThreadPool {
 
     public static void test() {
 
-        ExecutorService singleThreadExecutor = Executors.newCachedThreadPool();
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(10);
+        ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
+        ExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
 
         for (int i = 0; i < 100; i++) {
             final int index = i;
             singleThreadExecutor.execute(new Runnable() {
                 public void run() {
                     try {
-                        while(true) {
+                        while (true) {
                             System.out.println(index);
                             Thread.sleep(10 * 1000);
                         }
@@ -61,7 +62,6 @@ public class MyThreadPool {
 //        }
 
 
-
 //                System.out.println(Runtime.getRuntime().availableProcessors());
 //
 //                ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
@@ -81,7 +81,6 @@ public class MyThreadPool {
 //                }
 
 
-
 //        ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
 //        scheduledThreadPool.schedule(new Runnable() {
 //            public void run() {
@@ -90,7 +89,5 @@ public class MyThreadPool {
 //        }, 3, TimeUnit.SECONDS);  //表示延迟3秒执行
 
 
-
-
-}
+    }
 }

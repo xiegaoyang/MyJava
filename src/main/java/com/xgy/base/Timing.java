@@ -1,7 +1,5 @@
 package com.xgy.base;
 
-import junit.framework.Test;
-
 /**
  * Created by Administrator on 2016/11/18.
  */

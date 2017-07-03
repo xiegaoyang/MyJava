@@ -22,7 +22,6 @@ import java.util.UUID;
 
 public class Test {
 
-    private final String IP = "172.16.7.93";
     private final String PORT = "5433";
     private final String DB = "voip_log";
     private final String USERNAME = "postgres";
@@ -85,6 +84,7 @@ public class Test {
 //            String filePath = writeFile(array);
             String filePath = "ebensz-27ba600c-79b7-4b09-8d44-accd7aad766f";
 
+            String IP = "172.16.7.93";
             String url = DRIVER + IP + ":" + PORT + "/" + DB;
 
             conn = DriverManager.getConnection(url, USERNAME, PASSWORD);

@@ -1,7 +1,5 @@
 package com.xgy.base;
 
-import java.util.Arrays;
-
 class Base2 {
 	Base2() {
 		

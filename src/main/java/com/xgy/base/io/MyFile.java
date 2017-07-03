@@ -4,10 +4,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-
 public class MyFile {
 
     private File file = null;

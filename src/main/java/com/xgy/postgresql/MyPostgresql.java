@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.sql.*;
 
 import java.io.FileReader;
-import java.sql.Connection;
-import java.sql.DriverManager;
 
 import org.postgresql.copy.CopyManager;
 import org.postgresql.core.BaseConnection;

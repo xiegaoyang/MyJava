@@ -18,8 +18,6 @@ public class MyRedis {
 
     private Jedis redis = null;
 
-    private Logger logger = null;
-
     MyRedis() {
 
     }
@@ -30,7 +28,7 @@ public class MyRedis {
     }
 
     public void SetLogger(Logger logger) {
-        this.logger = logger;
+        Logger logger1 = logger;
     }
 
     private void Info(String msg) {

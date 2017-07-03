@@ -8,6 +8,7 @@ public class ThreadTest extends Thread {
     public ThreadTest(int threadNo) {
         this.threadNo = threadNo;
     }
+
     public static void main(String[] args) throws Exception {
         for (int i = 1; i < 10; i++) {
             new ThreadTest(i).start();

@@ -1,7 +1,5 @@
 package com.xgy.jvm;
 
-import junit.framework.Test;
-
 import java.lang.management.*;
 import java.util.List;
 

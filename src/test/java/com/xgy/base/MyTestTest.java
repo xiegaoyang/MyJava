@@ -1,7 +1,5 @@
 package com.xgy.base;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by gowild.cn on 2017/5/31.
  */
