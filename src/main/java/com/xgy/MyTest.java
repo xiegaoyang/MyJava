@@ -44,7 +44,10 @@ public class MyTest {
 
 //        System.out.println("Hello World");
 
-        test2();
+//        test2();
+
+        String str = "A";
+        str.toLowerCase();
 
     }
 

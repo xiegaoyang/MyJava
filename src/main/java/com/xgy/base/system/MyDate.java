@@ -10,9 +10,6 @@ public class MyDate {
 
     public static void main(String[] args) {
         System.out.println(MyDate.getCurrentTime());
-
-        System.out.println((new Date())());
-
     }
 
     public static String getCurrentTime() {

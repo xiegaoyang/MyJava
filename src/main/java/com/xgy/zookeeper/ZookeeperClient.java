@@ -11,7 +11,7 @@ import org.apache.zookeeper.ZooKeeper;
 public class ZookeeperClient {
 
     private static final int TIME_OUT = 3000;
-    private static final String HOST = "192.168.1.105:2181";
+    private static final String HOST = "xiegy:2181";
 
     public static void main(String[] args) throws Exception {
 
