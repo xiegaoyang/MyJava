@@ -8,15 +8,15 @@ import java.util.Date;
  */
 public class MyDate {
 
-    public static void main(String[] args) {
-        System.out.println(MyDate.getCurrentTime());
-    }
-
     public static String getCurrentTime() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String curDate = df.format(new Date());
-        curDate = curDate.substring(0, 8) + "20";
+//        curDate = curDate.substring(0, 8) + "20";
         return curDate;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(MyDate.getCurrentTime());
     }
 
 }

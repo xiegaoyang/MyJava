@@ -4,7 +4,6 @@ import java.lang.Thread;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
-//import java.lang.ThreadLocal;
 
 public class MyThread2 extends Thread {
 
@@ -28,9 +27,8 @@ public class MyThread2 extends Thread {
 					MyThread2 thread1 = new MyThread2();
 					if (!thread1.isDaemon()) {
 						System.out.println("�����ػ��߳�");
-						thread1.setDaemon(true);// �ػ��̺߳ͷ��ػ��߳�
+						thread1.setDaemon(true);//
 					}
-
 					thread1.setName("xgy");
 					thread1.start();
 					new MyThread2().start();

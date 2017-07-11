@@ -4,6 +4,7 @@ package com.xgy.thread;
  * Created by hadoop on 2017/4/5.
  */
 public class ThreadTest extends Thread {
+
     private int threadNo;
     public ThreadTest(int threadNo) {
         this.threadNo = threadNo;
@@ -15,8 +16,6 @@ public class ThreadTest extends Thread {
             Thread.sleep(1);
         }
     }
-
-
 
     @Override
     public synchronized void run() {
