@@ -7,6 +7,13 @@ public class ExportAllRedis {
 
     private MyRedis redis = new MyRedis();
 
+    public static void main(String[] args) {
+
+        ExportAllRedis redis = new ExportAllRedis();
+        redis.Start();
+
+    }
+
     public boolean Start() {
         try {
 
@@ -16,14 +23,14 @@ public class ExportAllRedis {
             }
 
             //遍历所有数据库
-            for (int i=0; i<16; ++i) {
+            for (int i = 0; i < 16; ++i) {
                 redis.SelectDb(i);
                 //一个数据库可以存放各种数据类型
                 //获取同一种数据类型的key
             }
 
 
-        }finally {
+        } finally {
             if (!redis.CloseRedis()) {
                 System.out.println("CloseRedis failed");
             }
@@ -31,12 +38,5 @@ public class ExportAllRedis {
 
 
         return true;
-    }
-
-    public static void main(String[] args) {
-
-        ExportAllRedis redis = new ExportAllRedis();
-        redis.Start();
-
     }
 }

@@ -18,12 +18,12 @@ public class MyLog {
         log.setLevel(Level.INFO);
 
         Logger log1 = Logger.getLogger("lavasoft");
-        System.out.println(log==log1);     //true
+        System.out.println(log == log1);     //true
 
         Logger log2 = Logger.getLogger("lavasoft.blog");
         //log2.setLevel(Level.WARNING);
 
-        ConsoleHandler consoleHandler =new ConsoleHandler();
+        ConsoleHandler consoleHandler = new ConsoleHandler();
         consoleHandler.setLevel(Level.ALL);
         log.addHandler(consoleHandler);
 

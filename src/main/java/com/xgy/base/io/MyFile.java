@@ -18,6 +18,62 @@ public class MyFile {
         file = new File(this.fileName);
     }
 
+    public static void main(String[] args) {
+        String fileName = "1.txt";
+        MyFile myFile = new MyFile(fileName);
+        if (!myFile.getFile().exists()) {
+            myFile.createFile();
+        }
+        if (!myFile.openFile("r")) {
+            System.out.println(fileName + " open failed");
+            return;
+        }
+
+
+        int size = myFile.getFileSize();
+        System.out.println("size = " + size);
+        try {
+            System.out.println(myFile.readLastNLine(3));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        //TestFile();
+    }
+
+    public static void TestFile() {
+
+        System.out.println("enter......");
+
+        File file = new File("D:" + File.separator + "test.txt");
+        //File file = new File("D:/test.txt" );
+        try {
+            System.out.println("path : " + file.getCanonicalPath());
+            System.out.println("filename : " + file.getName());
+            if (file.exists()) {
+                if (file.isFile()) {
+                    System.out.println("is file");
+                    if (file.canWrite()) {
+                        System.out.println("can write");
+                    }
+                    if (file.canRead()) {
+                        System.out.println("can read");
+                    }
+//					if (file.canExecute())
+//					{
+//						System.out.println("can execute");
+//					}
+                    file.delete();
+                }
+            } else {
+                file.createNewFile();
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 
     public boolean createFile() {
         try {
@@ -27,7 +83,6 @@ public class MyFile {
         }
         return true;
     }
-
 
     public String readFileContent(String fileName) throws IOException {
 
@@ -52,7 +107,6 @@ public class MyFile {
         return sb.toString();
     }
 
-
     public boolean openFile(String mode) {
 
         if (fileName.equals("")) {
@@ -71,12 +125,10 @@ public class MyFile {
         return true;
     }
 
-
     public boolean closeFile() {
 
         return true;
     }
-
 
     public int getFileSize() {
         return (int) file.length();
@@ -95,42 +147,17 @@ public class MyFile {
         return lines;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+
     public void setFileName(String fileName) {
         this.fileName = fileName;
         file = new File(this.fileName);
     }
 
-    public String getFileName() {
-        return fileName;
-    }
-
     public File getFile() {
         return file;
-    }
-
-
-    public static void main(String[] args) {
-        String fileName = "1.txt";
-        MyFile myFile = new MyFile(fileName);
-        if (!myFile.getFile().exists()) {
-            myFile.createFile();
-        }
-        if (!myFile.openFile("r")) {
-            System.out.println(fileName + " open failed");
-            return;
-        }
-
-
-        int size = myFile.getFileSize();
-        System.out.println("size = " + size);
-        try {
-            System.out.println(myFile.readLastNLine(3));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        //TestFile();
     }
 
     public String readLastNLine(long numRead) throws IOException {
@@ -178,39 +205,6 @@ public class MyFile {
         }
 
         return result;
-    }
-
-    public static void TestFile() {
-
-        System.out.println("enter......");
-
-        File file = new File("D:" + File.separator + "test.txt");
-        //File file = new File("D:/test.txt" );
-        try {
-            System.out.println("path : " + file.getCanonicalPath());
-            System.out.println("filename : " + file.getName());
-            if (file.exists()) {
-                if (file.isFile()) {
-                    System.out.println("is file");
-                    if (file.canWrite()) {
-                        System.out.println("can write");
-                    }
-                    if (file.canRead()) {
-                        System.out.println("can read");
-                    }
-//					if (file.canExecute())
-//					{
-//						System.out.println("can execute");
-//					}
-                    file.delete();
-                }
-            } else {
-                file.createNewFile();
-            }
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
     }
 
 

@@ -27,6 +27,38 @@ public class MyRedis {
         this.PORT = port;
     }
 
+    public static void main(String[] args) {
+        MyRedis redis = new MyRedis();
+        try {
+
+            if (!redis.ConnectRedis()) {
+                System.out.println("ConnectRedis failed");
+                return;
+            }
+
+//            redis.RedisString();
+//            redis.RedisHash();
+//            redis.RedisList();
+//            redis.RedisSet();
+//            redis.RedisZset();
+//
+//            redis.PrintAllKeys();
+
+        } finally {
+            if (!redis.CloseRedis()) {
+                System.out.println("CloseRedis failed");
+            }
+        }
+    }
+
+    public static void TestRedis() {
+        //连接本地的 Redis 服务
+        Jedis redis = new Jedis("localhost");
+        System.out.println("Connection to server sucessfully");
+        //查看服务是否运行
+        System.out.println("Server is running: " + redis.ping());
+    }
+
     public void SetLogger(Logger logger) {
         Logger logger1 = logger;
     }
@@ -38,52 +70,6 @@ public class MyRedis {
 
     public void SelectDb(int index) {
         redis.select(index);
-    }
-
-    public int GetDbCounts() {
-        //return redis.getDB();
-        return 0;
-    }
-
-    public void PrintAllKeys() {
-
-        for (int i=0; i<16; ++i) {
-            Info("第" + i + "个数据库 :  start");
-            redis.select(i);
-            Set<String> allKeys = redis.keys("*");
-            for (String key : allKeys) {
-                String value = "";
-                //获取key对应的数据类型
-                String type = redis.type(key);
-                Info("key   : " + key + ", 类型：" + type);
-
-
-                if(type.equals("string")){
-                    //get(key)方法返回key所关联的字符串值
-                    Info("value : " + redis.get(key));
-
-                }else if(type.equals("hash")){
-                    //以下方法仅适用于list.size=1时，否者value将取集合中最后一个元素的值
-                    List<String> list = redis.hvals(key);//hvals(key)返回哈希表 key 中所有域的值
-                    Info("value : " + list.toString());
-                }else if(type.equals("list")){
-
-                    List<String> list = redis.lrange(key, 0, 10);
-                    Info("value : " + list.toString());
-
-                }else if(type.equals("set")){
-
-
-                    Info(redis.smembers(key).toString());
-
-                }else if(type.equals("zset")) {
-
-                    Info(redis.zrange(key, 0, -1).toString());
-                }
-
-            }
-            Info("第" + i + "个数据库 :  end\n");
-        }
     }
 
 
@@ -133,6 +119,51 @@ public class MyRedis {
 //        }
 //    }
 
+    public int GetDbCounts() {
+        //return redis.getDB();
+        return 0;
+    }
+
+    public void PrintAllKeys() {
+
+        for (int i = 0; i < 16; ++i) {
+            Info("第" + i + "个数据库 :  start");
+            redis.select(i);
+            Set<String> allKeys = redis.keys("*");
+            for (String key : allKeys) {
+                String value = "";
+                //获取key对应的数据类型
+                String type = redis.type(key);
+                Info("key   : " + key + ", 类型：" + type);
+
+
+                if (type.equals("string")) {
+                    //get(key)方法返回key所关联的字符串值
+                    Info("value : " + redis.get(key));
+
+                } else if (type.equals("hash")) {
+                    //以下方法仅适用于list.size=1时，否者value将取集合中最后一个元素的值
+                    List<String> list = redis.hvals(key);//hvals(key)返回哈希表 key 中所有域的值
+                    Info("value : " + list.toString());
+                } else if (type.equals("list")) {
+
+                    List<String> list = redis.lrange(key, 0, 10);
+                    Info("value : " + list.toString());
+
+                } else if (type.equals("set")) {
+
+
+                    Info(redis.smembers(key).toString());
+
+                } else if (type.equals("zset")) {
+
+                    Info(redis.zrange(key, 0, -1).toString());
+                }
+
+            }
+            Info("第" + i + "个数据库 :  end\n");
+        }
+    }
 
     public boolean ConnectRedis() {
         if (null == redis) {
@@ -197,9 +228,9 @@ public class MyRedis {
 
         // 获取存储的数据并输出
         Info("Stored string in redis, name = " + redis.get("name") +
-                    ", sex = " + redis.get("sex") +
-                    ", age = " + redis.get("age") +
-                    ", work = " + redis.get("work")
+                ", sex = " + redis.get("sex") +
+                ", age = " + redis.get("age") +
+                ", work = " + redis.get("work")
         );
         Info("RedisString end\n");
     }
@@ -251,20 +282,20 @@ public class MyRedis {
         Info(redis.lrange("java framework", 0, -1).toString());
 
         //先向key java framework中存放三条数据
-        redis.lpush("java framework","spring");
-        redis.lpush("java framework","struts");
-        redis.lpush("java framework","hibernate");
+        redis.lpush("java framework", "spring");
+        redis.lpush("java framework", "struts");
+        redis.lpush("java framework", "hibernate");
         //再取出所有数据jedis.lrange是按范围取出，
         // 第一个是key，第二个是起始位置，第三个是结束位置，jedis.llen获取长度 -1表示取得所有
         Info(redis.lrange("java framework", 0, -1).toString());
 
         redis.del("java framework");
-        redis.rpush("java framework","spring");
-        redis.rpush("java framework","struts");
-        redis.rpush("java framework","hibernate");
+        redis.rpush("java framework", "spring");
+        redis.rpush("java framework", "struts");
+        redis.rpush("java framework", "hibernate");
         Info(redis.lrange("java framework", 0, -1).toString());
         Info("RedisList end\n");
-        
+
     }
 
     public void RedisHash() {
@@ -278,7 +309,7 @@ public class MyRedis {
         map.put("work", "it");
         map.put("addr", "深圳龙华");
 
-        redis.hmset("user",map); //会多次设置
+        redis.hmset("user", map); //会多次设置
         //之后在命令行操作
         //hgetall user：获取所有信息
         //hget user name : 获取name
@@ -287,7 +318,7 @@ public class MyRedis {
         Info(rrsmap.toString());//[xiegy, 29, 男]
 
         //删除map中的某个键值
-        redis.hdel("user","age");
+        redis.hdel("user", "age");
         Info(redis.hmget("user", "age").toString()); //因为删除了，所以返回的是null
         Info(redis.hlen("user").toString()); //返回key为user的键中存放的值的个数2
         Info(redis.exists("user").toString());//是否存在key为user的记录 返回true
@@ -295,46 +326,13 @@ public class MyRedis {
         Info(redis.hvals("user").toString());//返回map对象中的所有value
 
         Iterator<String> iter = redis.hkeys("user").iterator();
-        while (iter.hasNext()){
+        while (iter.hasNext()) {
             String key = iter.next();
             Info(key + ":" + redis.hmget("user", key));
         }
 
         Info("RedisHash end\n");
 
-    }
-
-    public static void main(String[] args) {
-        MyRedis redis = new MyRedis();
-        try {
-
-            if (!redis.ConnectRedis()) {
-                System.out.println("ConnectRedis failed");
-                return;
-            }
-
-//            redis.RedisString();
-//            redis.RedisHash();
-//            redis.RedisList();
-//            redis.RedisSet();
-//            redis.RedisZset();
-//
-//            redis.PrintAllKeys();
-
-        }finally {
-            if (!redis.CloseRedis()) {
-                System.out.println("CloseRedis failed");
-            }
-        }
-    }
-
-
-    public static void TestRedis() {
-        //连接本地的 Redis 服务
-        Jedis redis = new Jedis("localhost");
-        System.out.println("Connection to server sucessfully");
-        //查看服务是否运行
-        System.out.println("Server is running: " + redis.ping());
     }
 }
 

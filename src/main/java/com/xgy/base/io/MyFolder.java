@@ -20,7 +20,7 @@ public class MyFolder {
         this.dir = dir;
     }
 
-    public List<String> transverseFolder(){
+    public List<String> transverseFolder() {
 
         if (dir.equals("")) {
             return null;
@@ -29,7 +29,7 @@ public class MyFolder {
         List<String> fileList = new ArrayList<String>();
         File file = new File(dir);
         String[] ls = file.list();
-        for( int i = 0; i < ls.length; ++i ){
+        for (int i = 0; i < ls.length; ++i) {
             System.out.println(ls[i]);
             fileList.add(ls[i]);
         }

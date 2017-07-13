@@ -5,7 +5,7 @@ package com.xgy.base;
  */
 public class RedisTest {
 
-    public static void test(String str){
+    public static void test(String str) {
         System.out.println(str);
     }
 

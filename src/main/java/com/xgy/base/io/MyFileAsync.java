@@ -22,7 +22,7 @@ public class MyFileAsync {
 
         do {
             line = reader.readLine();
-        }while (lineNumber != ++num);
+        } while (lineNumber != ++num);
 
         reader.close();
 

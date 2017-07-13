@@ -6,6 +6,7 @@ package com.xgy.thread;
 public class ThreadTest extends Thread {
 
     private int threadNo;
+
     public ThreadTest(int threadNo) {
         this.threadNo = threadNo;
     }

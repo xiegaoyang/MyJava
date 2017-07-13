@@ -13,11 +13,10 @@ public class MyBase {
     }
 
 
-
     public static void main(String[] args) {
 
 
-        while(true) {
+        while (true) {
             System.out.println("Hello World!");
 
             try {

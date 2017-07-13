@@ -9,7 +9,7 @@ public class Test {
 
     public static void main(String[] args) {
         Test classifier = new Test();
-        String[] strings = new String[]{"Hello", "你好", "㐀㐂㐄", "にほんご", "조선어",",.?!@#$%^&()", "，。？！＠＃￥％……＆（）"};
+        String[] strings = new String[]{"Hello", "你好", "㐀㐂㐄", "にほんご", "조선어", ",.?!@#$%^&()", "，。？！＠＃￥％……＆（）"};
 
         for (int i = 0; i < strings.length; i++) {
             String str = strings[i];

@@ -5,7 +5,7 @@ package com.xgy.postgresql;
  * Created by root on 16-10-20.
  */
 
-class Person extends Object{
+class Person extends Object {
     public String name;
     public String sex;
     public int age;
@@ -13,6 +13,15 @@ class Person extends Object{
 
     public String addr;
     public String mobile;
+
+    Person(String name, String sex, int age, String work, String addr, String mobile) {
+        this.name = name;
+        this.sex = sex;
+        this.age = age;
+        this.work = work;
+        this.addr = addr;
+        this.mobile = mobile;
+    }
 
     public String getName() {
         return name;
@@ -59,17 +68,6 @@ class Person extends Object{
     }
 
     public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-
-
-    Person(String name, String sex, int age, String work, String addr, String mobile) {
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-        this.work = work;
-        this.addr = addr;
         this.mobile = mobile;
     }
 }

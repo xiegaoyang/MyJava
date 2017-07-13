@@ -18,7 +18,7 @@ public class MyThreadPoolExecutor {
 
         // 构造一个线程池
         ThreadPoolExecutor threadPool = new ThreadPoolExecutor(2, 4, 3, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(3),
-                                                    new ThreadPoolExecutor.DiscardOldestPolicy());
+                new ThreadPoolExecutor.DiscardOldestPolicy());
 
         for (int i = 1; i <= produceTaskMaxNumber; i++) {
             try {

@@ -14,14 +14,14 @@ public class Timing {
 
     public static String EndTime() {
         endTime = System.currentTimeMillis();
-        return Integer.toString((int)(endTime - startTime)) + "ms";
+        return Integer.toString((int) (endTime - startTime)) + "ms";
     }
 
     public static void main(String[] args) {
 //        Timing.Test();
 
         Timing.StartTime();
-        for(int i=0;i<1000000;i++){
+        for (int i = 0; i < 1000000; i++) {
             Math.random();
         }
         System.out.println(Timing.EndTime());
@@ -31,13 +31,13 @@ public class Timing {
 
     public static void Test() {
         long startMili = System.currentTimeMillis();// 当前时间对应的毫秒数
-        System.out.println("开始 : "+startMili);
+        System.out.println("开始 : " + startMili);
         // 执行一段代码,求一百万次随机值
-        for(int i=0;i<1000000;i++){
+        for (int i = 0; i < 1000000; i++) {
             Math.random();
         }
         long endMili = System.currentTimeMillis();
-        System.out.println("结束 : "+endMili);
-        System.out.println("耗时 : "+(endMili-startMili)+"毫秒");
+        System.out.println("结束 : " + endMili);
+        System.out.println("耗时 : " + (endMili - startMili) + "毫秒");
     }
 }

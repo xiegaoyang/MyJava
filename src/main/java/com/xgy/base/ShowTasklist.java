@@ -14,13 +14,13 @@ public class ShowTasklist {
 
         // startTask("E:\\Fetion\\Fetion.exe");
         // killTask("javaw");
-    	showTaskList();
-    	
+        showTaskList();
+
     }
 
     /**
      * ɱ��һ������
-     * 
+     *
      * @param task
      */
     public static void killTask(String task) {
@@ -75,7 +75,7 @@ public class ShowTasklist {
 
     /**
      * ����һ������
-     * 
+     *
      * @param task
      */
     public static void startTask(String task) {

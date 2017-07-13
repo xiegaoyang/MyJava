@@ -12,9 +12,9 @@ public class Base {
      *
      */
     public static void print() {
-        for ( int i=0; i<=5; ++i) {
-            for (int j=5; j>=0; --j) {
-                if (i<j) {
+        for (int i = 0; i <= 5; ++i) {
+            for (int j = 5; j >= 0; --j) {
+                if (i < j) {
                     System.out.print(" ");
                 } else {
                     System.out.print("*");
@@ -39,15 +39,15 @@ public class Base {
         int index = 0;
         int length = array.length;
 
-        while (n-- > 0){
+        while (n-- > 0) {
 
-            for (int i=0; i<num; ++i) {
+            for (int i = 0; i < num; ++i) {
 
-                while (false == array[(index++)%length]) {
+                while (false == array[(index++) % length]) {
                 }
 
                 if (i == num - 1) {
-                    array[(index-1)%length] = false;
+                    array[(index - 1) % length] = false;
                     for (boolean item : array) {
                         System.out.print(item + " ");
                     }

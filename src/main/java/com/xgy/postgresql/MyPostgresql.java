@@ -1,12 +1,11 @@
 package com.xgy.postgresql;
 
-import java.io.IOException;
-import java.sql.*;
-
-import java.io.FileReader;
-
 import org.postgresql.copy.CopyManager;
 import org.postgresql.core.BaseConnection;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.*;
 
 
 /**
@@ -23,6 +22,54 @@ public class MyPostgresql {
 
     private Connection c = null;
     private Statement stmt = null;
+
+    public static void main(String args[]) {
+
+        //TestPostgresql();
+        MyPostgresql myPostgresql = new MyPostgresql();
+        myPostgresql.batchInsert();
+
+//        MyPostgresql postgresql = new MyPostgresql();
+//        if (!postgresql.ConnectDB()) {
+//            System.out.println("connect db failed");
+//            return;
+//        }
+//
+//        System.out.println("postgresql started");
+//
+//        if (!postgresql.ConnectDB()) {
+//            System.out.println("close db failed");
+//            return;
+//        }
+//
+//        System.out.println("postgresql stoped");
+
+    }
+
+    public static void TestPostgresql() {
+        Connection c = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection("jdbc:postgresql://xgyvm:5432/accounts", "postgres", "pqdAD34rASDF");
+            if (null == c) {
+                System.out.println("DriverManager.getConnection failed");
+                return;
+            }
+            System.out.println("Opened database successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        } finally {
+            try {
+                if (!c.isClosed()) {
+                    c.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public boolean ConnectDB() {
         String url = DRIVER + IP + ":" + PORT + "/" + DB;
@@ -164,54 +211,6 @@ public class MyPostgresql {
         return true;
     }
 
-    public static void main(String args[]) {
-
-        //TestPostgresql();
-        MyPostgresql myPostgresql = new MyPostgresql();
-        myPostgresql.batchInsert();
-
-//        MyPostgresql postgresql = new MyPostgresql();
-//        if (!postgresql.ConnectDB()) {
-//            System.out.println("connect db failed");
-//            return;
-//        }
-//
-//        System.out.println("postgresql started");
-//
-//        if (!postgresql.ConnectDB()) {
-//            System.out.println("close db failed");
-//            return;
-//        }
-//
-//        System.out.println("postgresql stoped");
-
-    }
-
-    public static void TestPostgresql() {
-        Connection c = null;
-        try {
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://xgyvm:5432/accounts", "postgres", "pqdAD34rASDF");
-            if (null == c) {
-                System.out.println("DriverManager.getConnection failed");
-                return;
-            }
-            System.out.println("Opened database successfully");
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
-        } finally {
-            try {
-                if (!c.isClosed()) {
-                    c.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
 
     //public class PgSqlJdbcCopyStreamsExample
 
@@ -236,7 +235,6 @@ public class MyPostgresql {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
 
         System.err.println("Done.");

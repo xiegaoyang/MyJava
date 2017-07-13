@@ -28,8 +28,8 @@ public class MyArrayList {
     public static void ArrayListPerformanceTest() {
 
         List<String> list = new ArrayList<String>();
-        long t1,t2;
-        for(int j = 0; j < 10000000; j++)
+        long t1, t2;
+        for (int j = 0; j < 10000000; j++)
 //        for(int j = 0; j < 100000; j++)
         {
             list.add("aaaaaa" + j);
@@ -45,7 +45,6 @@ public class MyArrayList {
 //        System.out.println("Run Time:" + (t2 -t1) + "(ms)");
 
 
-
 //        System.out.println("List second visit method:");
 //        t1=System.currentTimeMillis();
 //        for(int i = 0; i < list.size(); i++)
@@ -57,17 +56,15 @@ public class MyArrayList {
 //        System.out.println("Run Time:" + (t2 -t1) + "(ms)");
 
 
-
         System.out.println("List Third visit method:");
         Iterator<String> iter = list.iterator();
-        t1=System.currentTimeMillis();
-        while(iter.hasNext())
-        {
+        t1 = System.currentTimeMillis();
+        while (iter.hasNext()) {
             iter.next();
             //System.out.println(iter.next());
         }
-        t2=System.currentTimeMillis();
-        System.out.println("Run Time:" + (t2 -t1) + "(ms)");
+        t2 = System.currentTimeMillis();
+        System.out.println("Run Time:" + (t2 - t1) + "(ms)");
 
         System.out.println("Finished!!!!!!!!");
     }

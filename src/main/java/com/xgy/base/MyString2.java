@@ -4,50 +4,50 @@ import java.io.UnsupportedEncodingException;
 
 public class MyString2 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		testUnicode();
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
 
-		String str = "1024";
-		// int num = Integer.parseInt(str);
-		int num = Integer.valueOf(str, 16);// ��str�е����ֵ���16���Ƶ�����Ȼ��ת��Ϊint
-		System.out.println(num);
+        testUnicode();
 
-		String s1 = "���";
-		try {
-			String s2 = new String(s1.getBytes("GB2312"), "ISO-8859-1");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        String str = "1024";
+        // int num = Integer.parseInt(str);
+        int num = Integer.valueOf(str, 16);// ��str�е����ֵ���16���Ƶ�����Ȼ��ת��Ϊint
+        System.out.println(num);
 
-		System.out.println(str.substring(1));
+        String s1 = "���";
+        try {
+            String s2 = new String(s1.getBytes("GB2312"), "ISO-8859-1");
+        } catch (UnsupportedEncodingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
-		System.out.println(reverse(str));
-	}
+        System.out.println(str.substring(1));
 
-	public static String reverse(String originStr) {
-		if (originStr == null || originStr.length() <= 1)
-			return originStr;
-		return reverse(originStr.substring(1)) + originStr.charAt(0);
-	}
+        System.out.println(reverse(str));
+    }
 
-	public static void testUnicode() {
-		String str = "hello";
+    public static String reverse(String originStr) {
+        if (originStr == null || originStr.length() <= 1)
+            return originStr;
+        return reverse(originStr.substring(1)) + originStr.charAt(0);
+    }
 
-		byte[] srtbyte = null;
+    public static void testUnicode() {
+        String str = "hello";
 
-		try {
-			srtbyte = str.getBytes("UTF-8");
-			String res = new String(srtbyte, "UTF-8");
-			System.out.println(res);
-		} catch (UnsupportedEncodingException e) {
+        byte[] srtbyte = null;
 
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+        try {
+            srtbyte = str.getBytes("UTF-8");
+            String res = new String(srtbyte, "UTF-8");
+            System.out.println(res);
+        } catch (UnsupportedEncodingException e) {
 
-		}
-	}
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+
+        }
+    }
 
 }

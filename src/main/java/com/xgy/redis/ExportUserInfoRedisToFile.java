@@ -13,6 +13,11 @@ public class ExportUserInfoRedisToFile {
 
     //public static Logger logger = Logger.getLogger("MainLogger");
 
+    public static void main(String[] args) {
+        ExportUserInfoRedisToFile redis = new ExportUserInfoRedisToFile();
+        redis.Start();
+    }
+
     public boolean Start() {
 
         //System.out.println("***************************************************************************************************");
@@ -44,10 +49,5 @@ public class ExportUserInfoRedisToFile {
         }
         System.out.println("***************************************************************************************************\n\n");
         return true;
-    }
-
-    public static void main(String[] args) {
-        ExportUserInfoRedisToFile redis = new ExportUserInfoRedisToFile();
-        redis.Start();
     }
 }

@@ -2,9 +2,7 @@ package com.xgy;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Random;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
@@ -40,14 +38,6 @@ public class Test2 {
 
     }
 
-    public void test4() {
-//        System.currentTimeMillis();
-
-        int id = 1;
-        checkArgument(id > 0, "%s 表 id %s 必须大于0！", this, id);
-
-    }
-
     public static void test3() {
         String str = "123";
         Integer value = 123;
@@ -55,8 +45,6 @@ public class Test2 {
             System.out.println("equal");
         }
     }
-
-
 
     public static void test() {
         String reg = "[^0-9a-zA-Z\u4e00-\u9fa5]+";
@@ -84,9 +72,9 @@ public class Test2 {
 //            currentDate = sdf.parse(sdf.format(new Date()));
             String date = "07-23 23:59:59";
             currentDate = sdf.parse(date);
-            if((currentDate.after(sdf.parse("07-17 00:00:00")) && currentDate.before(sdf.parse("07-24 00:00:00")))){ //不是白班
+            if ((currentDate.after(sdf.parse("07-17 00:00:00")) && currentDate.before(sdf.parse("07-24 00:00:00")))) { //不是白班
                 System.out.println("白天");
-            }else {
+            } else {
                 System.out.println("夜晚");
             }
         } catch (ParseException e) {
@@ -95,6 +83,13 @@ public class Test2 {
 
     }
 
+    public void test4() {
+//        System.currentTimeMillis();
+
+        int id = 1;
+        checkArgument(id > 0, "%s 表 id %s 必须大于0！", this, id);
+
+    }
 
     @Override
     public String toString() {

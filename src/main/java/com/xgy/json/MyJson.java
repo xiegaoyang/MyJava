@@ -17,7 +17,6 @@ public class MyJson {
     //json对象转换为Java对象
 
 
-
     public static void main(String[] args) {
 
     }

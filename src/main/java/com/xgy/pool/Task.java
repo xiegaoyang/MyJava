@@ -21,17 +21,17 @@ class Task implements Runnable {
 
         MyObject myObject = null;
         int index = 0;
-        for (int i=0; i<100000; ++i) {
+        for (int i = 0; i < 100000; ++i) {
             index = MyUtil.getRandomInt(0, 10000);
 
-            if (index%2 ==0) {
+            if (index % 2 == 0) {
                 System.out.println(threadName + i + ", get, index = " + index);
                 myObject = myPool.get();
                 if (null != myObject) {
                     //System.out.println(myObject.getName() + ", " + myObject.getAge());
                 }
                 myPool.getObjectList().add(myObject);
-            }else {
+            } else {
                 if (myPool.getObjectList().size() == 0) {
                     continue;
                 }

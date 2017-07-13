@@ -13,22 +13,6 @@ import java.net.URLConnection;
  */
 public class MyHttpClient {
 
-    public boolean GetSingleParameter() {
-        return true;
-    }
-
-    public boolean GetMultiParameter() {
-        return true;
-    }
-
-    public boolean PostJson() {
-        return true;
-    }
-
-    public boolean PostXml() {
-        return true;
-    }
-
     public static void main(String[] args) {
 
         URL url = null;
@@ -52,6 +36,22 @@ public class MyHttpClient {
         }
 
         System.out.println(sb.toString());
+    }
+
+    public boolean GetSingleParameter() {
+        return true;
+    }
+
+    public boolean GetMultiParameter() {
+        return true;
+    }
+
+    public boolean PostJson() {
+        return true;
+    }
+
+    public boolean PostXml() {
+        return true;
     }
 
 

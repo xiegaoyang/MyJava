@@ -4,12 +4,12 @@ package com.xgy.messagequeue;
  * Created by hadoop on 2017/2/7.
  */
 
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
-
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 public class RabbitmqSend {
     private final static String QUEUE_NAME = "hello";

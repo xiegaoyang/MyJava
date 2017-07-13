@@ -1,7 +1,5 @@
 package com.xgy.gc;
 
-import com.xgy.base.container.MyArray;
-
 import static java.lang.Thread.sleep;
 
 /**
@@ -9,15 +7,8 @@ import static java.lang.Thread.sleep;
  */
 public class MyGc {
 
-    static class Test {
-        private int a = 100;
-        public void output() {
-            System.out.println("a = " + a);
-        }
-    }
-
     public static void main(String[] args) {
-        while(true) {
+        while (true) {
             Test test = new Test();
             test.output();
             try {
@@ -27,6 +18,14 @@ public class MyGc {
             }
         }
 
+    }
+
+    static class Test {
+        private int a = 100;
+
+        public void output() {
+            System.out.println("a = " + a);
+        }
     }
 
 }

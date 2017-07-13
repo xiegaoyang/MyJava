@@ -12,26 +12,25 @@ public class MyPerson {
         return name;
     }
 
-    public String getWork() {
-        return work;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public String getWork() {
+        return work;
     }
 
     public void setWork(String work) {
         this.work = work;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
 
 }

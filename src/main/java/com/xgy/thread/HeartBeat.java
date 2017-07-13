@@ -15,6 +15,6 @@ public class HeartBeat {
                 System.out.println("HeartBeat.........................");
             }
         };
-        executor.scheduleAtFixedRate(task,5,3, TimeUnit.SECONDS);   //5秒后第一次执行，之后每隔3秒执行一次
+        executor.scheduleAtFixedRate(task, 5, 3, TimeUnit.SECONDS);   //5秒后第一次执行，之后每隔3秒执行一次
     }
 }
