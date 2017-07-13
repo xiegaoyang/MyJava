@@ -15,24 +15,32 @@ package com.xgy.base;
  */
 class HelloA {
 
+    static {
+        System.out.println("static A");
+    }
+
+    {
+        System.out.println("I'm A class");
+    }
+
     public HelloA() {
         System.out.println("HelloA");
     }
 
-    { System.out.println("I'm A class"); }
-
-    static { System.out.println("static A"); }
-
 }
 
 public class HelloB extends HelloA {
+    static {
+        System.out.println("static B");
+    }
+
+    {
+        System.out.println("I'm B class");
+    }
+
     public HelloB() {
         System.out.println("HelloB");
     }
-
-    { System.out.println("I'm B class"); }
-
-    static { System.out.println("static B"); }
 
     public static void main(String[] args) {
 
