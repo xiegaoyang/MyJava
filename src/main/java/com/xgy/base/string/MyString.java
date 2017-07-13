@@ -1,4 +1,4 @@
-package com.xgy.base;
+package com.xgy.base.string;
 
 
 public class MyString {

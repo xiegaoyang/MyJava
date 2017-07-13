@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class CountDownLatchTest {
 
     private static CountDownLatch count = new CountDownLatch(4);
+
     private static ExecutorService service = Executors.newFixedThreadPool(6);
 
     public static void main(String args[]) throws InterruptedException {
@@ -31,6 +32,7 @@ public class CountDownLatchTest {
                 }
             });
         }
+
         // 主线程一直被阻塞,知道count的计数器被设置为0
         count.await();
 
