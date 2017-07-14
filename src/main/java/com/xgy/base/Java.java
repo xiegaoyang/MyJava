@@ -43,13 +43,9 @@ public class Java {
             //TestClass();
 
         } catch (IndexOutOfBoundsException ie) {
-            System.out.println("����Խ��");
         } catch (ArithmeticException ie) {
-            System.out.println("�����쳣");
         } catch (Exception ie) {
-            System.out.println("δ֪�쳣");
         } finally {
-
             System.out.println("End");
         }
 
@@ -134,13 +130,8 @@ public class Java {
 
     }
 
-    public static void TestCollection() {
 
-    }
 
-    public static void TestIO() {
-
-    }
 
     public static void TestClass() {
         Integer i = 100;

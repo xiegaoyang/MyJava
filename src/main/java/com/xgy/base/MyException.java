@@ -1,6 +1,7 @@
 package com.xgy.base;
 
 public class MyException {
+
     public MyException() {
     }
 

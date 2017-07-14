@@ -17,7 +17,6 @@ public class MyThread2 extends Thread {
                 if (10 == i) {
                     MyThread2 thread1 = new MyThread2();
                     if (!thread1.isDaemon()) {
-                        System.out.println("�����ػ��߳�");
                         thread1.setDaemon(true);//
                     }
                     thread1.setName("xgy");
@@ -75,7 +74,6 @@ class ThirdThread implements Callable<Integer> {
         for (i = 0; i < 10; ++i) {
             System.out.println(Thread.currentThread().getName() + " " + i);
         }
-
         return i;
     }
 }

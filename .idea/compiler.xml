@@ -25,7 +25,7 @@
         <module name="MyJava" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="MyJava" target="1.8" />
     </bytecodeTargetLevel>
   </component>

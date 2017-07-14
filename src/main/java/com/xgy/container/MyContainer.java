@@ -1,4 +1,4 @@
-package com.xgy.base.container;
+package com.xgy.container;
 
 import java.util.ArrayList;
 import java.util.HashMap;

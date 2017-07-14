@@ -1,4 +1,4 @@
-package com.xgy.base.container;
+package com.xgy.container;
 
 import org.apache.commons.lang3.ArrayUtils;
 
