@@ -1,4 +1,4 @@
-package com.xgy.base.io;
+package com.xgy.io;
 
 /**
  * Created by gowild.cn on 2017/7/12.

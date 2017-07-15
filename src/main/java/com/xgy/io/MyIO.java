@@ -1,4 +1,4 @@
-package com.xgy.base.io;
+package com.xgy.io;
 
 import java.io.BufferedReader;
 import java.io.File;
