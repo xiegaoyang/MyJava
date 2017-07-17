@@ -10,21 +10,7 @@ import java.io.UnsupportedEncodingException;
  */
 public class StringUtil {
 
-    /**
-     * 判断字符串是否都是数字
-     *
-     * @param str
-     * @return
-     */
-    public static boolean isNumeric(String str) {
 
-        if (null != str && !"".equals(str.trim())) {
-            return str.matches("^[0-9]*$");
-        }
-
-        return false;
-
-    }
 
 
     public static void main(String[] args) {
@@ -41,6 +27,8 @@ public class StringUtil {
 
         int n = StringUtils.countMatches("11112222", "1");
         System.out.println(n);
+
+
     }
 
 
