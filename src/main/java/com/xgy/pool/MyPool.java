@@ -1,7 +1,5 @@
 package com.xgy.pool;
 
-import com.xgy.util.MyUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;

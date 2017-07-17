@@ -1,7 +1,5 @@
 package com.xgy.pool;
 
-import com.xgy.util.MyUtil;
-
 import java.util.List;
 
 import static java.lang.Thread.sleep;
