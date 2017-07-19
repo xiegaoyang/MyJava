@@ -29,8 +29,7 @@ public class MyIO {
     public static void TestIO1() {
 
         String s = null;
-        InputStreamReader re = new InputStreamReader(System.in);
-        BufferedReader br = new BufferedReader(re);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         try {
             s = br.readLine();
@@ -38,10 +37,19 @@ public class MyIO {
             br.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (NumberFormatException e)// ��Ӧ�ó�����ͼ���ַ���ת����һ����ֵ���ͣ������ַ�������ת��Ϊ�ʵ���ʽʱ���׳����쳣��
-        {
-            System.out.println(" ����Ĳ������� ");
+        } catch (NumberFormatException e) {
+            System.out.println(" error ");
+        } finally {
+            if (null != br) {
+                try {
+                    br.close();
+                    br = null;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
+
 
 }

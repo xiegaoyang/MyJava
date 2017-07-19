@@ -39,7 +39,6 @@ public class ForkJoinTest {
         }
 
         @Override
-
         public Long call() {
             long acc = 0;
             for (long i = from; i <= to; i++) {
