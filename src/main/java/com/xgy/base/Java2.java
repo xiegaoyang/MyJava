@@ -4,17 +4,13 @@ package com.xgy.base;
 public class Java2 {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        System.out.println("Hello World!");
 
         Human xgy = new Human();
         Class c1 = xgy.getClass();
         System.out.println(c1.getName());
 
-        //�������ڲ�����
         calSize();
 
-        //�����������еĺ���
 //		IO1 io = new IO1();
 //		io.TestIO1();
 

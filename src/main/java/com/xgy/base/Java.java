@@ -31,10 +31,8 @@ public class Java {
             try {
                 TestSystem();
             } catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
 
@@ -63,7 +61,6 @@ public class Java {
     public static void TestString() {
         String s = "12345, XIE gao Yang";
         System.out.println("s.length = " + s.length());
-
         System.out.println("low : " + s.toLowerCase());
         System.out.println("up : " + s.toUpperCase());
     }

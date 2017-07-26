@@ -1,6 +1,7 @@
 package com.xgy.base.system;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
@@ -8,6 +9,13 @@ import java.util.Random;
  * Created by hadoop on 2017/7/17.
  */
 public class SystemUtils {
+
+    public static String getCurrentDate() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar cal = Calendar.getInstance();// 取当前日期。
+        return format.format(cal.getTime());
+    }
+
 
     /**
      * 获取当前时间
@@ -36,10 +44,13 @@ public class SystemUtils {
 
 
     public static void main(String[] args) {
+
         System.out.println(SystemUtils.getCurrentTime());
 
         for (int i = 0; i < 200; ++i) {
             System.out.print(SystemUtils.getRandomInt(0, 10) + " ");
         }
+
+        System.out.println(SystemUtils.getCurrentDate());
     }
 }
