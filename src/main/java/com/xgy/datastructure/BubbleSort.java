@@ -4,8 +4,47 @@ import java.util.Arrays;
 
 public class BubbleSort {
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    /**
+     * 正宗的冒泡排序：每一趟比较找出最小值   从下到上
+     *
+     * @param a
+     * @param n
+     */
+    public static void BubbleSort1(int[] a, int n) {
+
+        int i = 0;
+        int j = 0;
+        int temp = 0;
+
+        for (i = 0; i < n; ++i) {
+            for (j = n - 1; j > i; --j) {
+                if (a[j] < a[j - 1]) {
+                    temp = a[j];
+                    a[j] = a[j - 1];
+                    a[j - 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void BubbleSort2(int[] a, int n) {
+
+        int i = 0;
+        int j = 0;
+        int temp = 0;
+
+        for (i = 0; i < n; ++i) {
+            for (j = i + 1; j < n; ++j) {
+                if (a[i] > a[j]) {
+                    temp = a[j];
+                    a[j] = a[i];
+                    a[i] = temp;
+                }
+            }
+        }
+    }
+
+    public static void BubbleSort3(int[] a, int n) {
 
         int i = 0;
         int j = 0;
@@ -13,13 +52,11 @@ public class BubbleSort {
 
         boolean flag = true;
 
-        int a[] = {3, 4, 1, 2, 5, 6, 7, 9, 8, 0};
-
-        for (i = 0; i < a.length && flag; ++i) {
+        for (i = 0; i < n && flag; ++i) {
             flag = false;
 
-            for (j = a.length - 1; j > i; --j) {
-                if (a[j] > a[j - 1]) {
+            for (j = n - 1; j > i; --j) {
+                if (a[j] < a[j - 1]) {
                     temp = a[j];
                     a[j] = a[j - 1];
                     a[j - 1] = temp;
@@ -29,13 +66,19 @@ public class BubbleSort {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+
+        int a[] = SortUtil.a;
+
+//        BubbleSort.BubbleSort1(a, a.length);
+//        BubbleSort.BubbleSort2(a, a.length);
+        BubbleSort.BubbleSort3(a, a.length);
+
 
         System.out.println(Arrays.toString(a));
 
-//		for (int k : a)
-//		{
-//			System.out.println(k);
-//		}
 
     }
 
