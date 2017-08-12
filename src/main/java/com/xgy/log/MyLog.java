@@ -39,5 +39,7 @@ public class MyLog {
         log.info("aaa");
         log2.info("bbb");
         log2.fine("fine");
+
+        System.out.println("hello");
     }
 }
