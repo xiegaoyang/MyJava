@@ -40,6 +40,5 @@ public class MyLog {
         log2.info("bbb");
         log2.fine("fine");
 
-        System.out.println("hello");
     }
 }
