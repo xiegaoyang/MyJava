@@ -8,7 +8,7 @@ import java.util.Random;
 /**
  * Created by hadoop on 2017/7/17.
  */
-public class SystemUtils {
+public class SystemUtil {
 
     public static String getCurrentDate() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -45,12 +45,12 @@ public class SystemUtils {
 
     public static void main(String[] args) {
 
-        System.out.println(SystemUtils.getCurrentTime());
+        System.out.println(SystemUtil.getCurrentTime());
 
         for (int i = 0; i < 200; ++i) {
-            System.out.print(SystemUtils.getRandomInt(0, 10) + " ");
+            System.out.print(SystemUtil.getRandomInt(0, 10) + " ");
         }
 
-        System.out.println(SystemUtils.getCurrentDate());
+        System.out.println(SystemUtil.getCurrentDate());
     }
 }

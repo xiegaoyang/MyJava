@@ -27,6 +27,7 @@ public class MyHttpClient {
             while ((line = br.readLine()) != null) {
                 sb.append(line + "\n");
             }
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {

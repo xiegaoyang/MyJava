@@ -1,4 +1,4 @@
-package com.xgy.base;
+package com.xgy;
 
 import java.util.Calendar;
 import java.util.Date;

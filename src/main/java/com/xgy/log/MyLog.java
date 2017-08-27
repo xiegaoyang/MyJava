@@ -29,7 +29,7 @@ public class MyLog {
 
         FileHandler fileHandler = null;
         try {
-            fileHandler = new FileHandler("C:/testlog%g.log");
+            fileHandler = new FileHandler("testlog%g.log");
         } catch (IOException e) {
             e.printStackTrace();
         }

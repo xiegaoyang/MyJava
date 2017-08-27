@@ -15,9 +15,13 @@ package com.xgy.base;
  */
 class HelloA {
 
+    private static int a = 1;
+
     static {
+        a += 2;
         System.out.println("static A");
     }
+
 
     {
         System.out.println("I'm A class");

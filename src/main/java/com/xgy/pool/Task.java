@@ -1,6 +1,6 @@
 package com.xgy.pool;
 
-import com.xgy.base.system.SystemUtils;
+import com.xgy.base.system.SystemUtil;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ class Task implements Runnable {
         MyObject myObject = null;
         int index = 0;
         for (int i = 0; i < 100000; ++i) {
-            index = SystemUtils.getRandomInt(0, 10000);
+            index = SystemUtil.getRandomInt(0, 10000);
 
             if (index % 2 == 0) {
                 System.out.println(threadName + i + ", get, index = " + index);
