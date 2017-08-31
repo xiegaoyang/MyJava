@@ -28,12 +28,10 @@ class Person {
 public class MyMysql {
 
     // JDBC 驱动名及数据库 URL
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://xgyvm:3306/test";
-
-    // 数据库的用户名与密码，需要根据自己的设置
-    static final String USER = "root";
-    static final String PASS = "123";
+    private final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    private final String DB_URL = "jdbc:mysql://xgyvm:3306/test";
+    private final String USER = "root";
+    private final String PASS = "123";
 
     private Connection conn = null;
     private Statement stmt = null;
@@ -48,6 +46,7 @@ public class MyMysql {
 
         try {
             Person person = new Person("余婷", "女", 26, "行政助理", "湖北黄冈", "13912345678");
+
             if (!mysql.Insert(person)) {
                 System.out.println("Insert failed");
                 return;
@@ -77,14 +76,14 @@ public class MyMysql {
 
     }
 
-    public static void Test() {
+    public void Test() {
 
         Connection conn = null;
         Statement stmt = null;
 
         try {
             // 注册 JDBC 驱动
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(JDBC_DRIVER);
 
             // 打开链接
             System.out.println("连接数据库");
@@ -99,6 +98,7 @@ public class MyMysql {
 
             // 展开结果集数据库
             while (rs.next()) {
+
                 // 通过字段检索
                 String name = rs.getString("name");
                 String sex = rs.getString("sex");
@@ -153,7 +153,7 @@ public class MyMysql {
         // 注册 JDBC 驱动
         try {
 
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(JDBC_DRIVER);
 
             if (null == conn) {
                 // 打开链接

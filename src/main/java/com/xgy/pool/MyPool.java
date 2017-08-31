@@ -1,6 +1,6 @@
 package com.xgy.pool;
 
-import com.xgy.base.system.SystemUtil;
+import com.xgy.utils.NumberUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +33,8 @@ public class MyPool {
     private MyPool() {
         for (int i = 0; i < initSize; ++i) {
             MyObject myObject = new MyObject();
-            myObject.setName(names[SystemUtil.getRandomInt(0, names.length)]);
-            myObject.setAge(ages[SystemUtil.getRandomInt(0, ages.length)]);
+            myObject.setName(names[NumberUtil.getRandomInt(0, names.length)]);
+            myObject.setAge(ages[NumberUtil.getRandomInt(0, ages.length)]);
             freeList.add(myObject);
         }
         curCapacity += initSize;
@@ -89,7 +89,7 @@ public class MyPool {
         MyObject myObject = null;
         int index = 0;
         for (int i = 0; i < 100000; ++i) {
-            index = SystemUtil.getRandomInt(0, 10000);
+            index = NumberUtil.getRandomInt(0, 10000);
 
             if (index % 2 == 0) {
                 System.out.println(i + ", get, index = " + index);
@@ -149,8 +149,8 @@ public class MyPool {
 
                 for (int i = 0; i < step; ++i) {
                     MyObject myObject1 = new MyObject();
-                    myObject1.setName(names[SystemUtil.getRandomInt(0, names.length)]);
-                    myObject1.setAge(ages[SystemUtil.getRandomInt(0, ages.length)]);
+                    myObject1.setName(names[NumberUtil.getRandomInt(0, names.length)]);
+                    myObject1.setAge(ages[NumberUtil.getRandomInt(0, ages.length)]);
                     freeList.add(myObject1);
                 }
 

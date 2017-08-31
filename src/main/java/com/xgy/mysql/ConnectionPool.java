@@ -179,7 +179,7 @@ public class ConnectionPool {
 
         }
 
-        return conn;// ���ػ�õĿ��õ�����
+        return conn;
     }
 
 

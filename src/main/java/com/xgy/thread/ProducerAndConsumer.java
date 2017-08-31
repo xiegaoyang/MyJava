@@ -1,6 +1,7 @@
 package com.xgy.thread;
 
-import com.xgy.base.system.SystemUtil;
+import com.xgy.utils.NumberUtil;
+import com.xgy.utils.TimeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +21,9 @@ class Producer extends Thread {
     @Override
     public void run() {
         while (!isInterrupted()) {
-            int node = SystemUtil.getRandomInt(0, 100);
+            int node = NumberUtil.getRandomInt(0, 100);
             queue.add(node);
-            System.out.println(SystemUtil.getCurrentDate() + "  Producer-" + Thread.currentThread().getId() + ": " + node);
+            System.out.println(TimeUtil.getCurrentDate() + "  Producer-" + Thread.currentThread().getId() + ": " + node);
         }
     }
 }
@@ -38,7 +39,7 @@ class Consumer extends Thread {
     @Override
     public void run() {
         while (!isInterrupted()) {
-            System.out.println(SystemUtil.getCurrentDate() + "  Consumer-" + Thread.currentThread().getId() + ": " + queue.get());
+            System.out.println(TimeUtil.getCurrentDate() + "  Consumer-" + Thread.currentThread().getId() + ": " + queue.get());
         }
     }
 }

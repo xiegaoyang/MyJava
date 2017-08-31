@@ -35,21 +35,7 @@ public class StringHelper {
 
     }
 
-    /**
-     * 判断字符串是否都是数字
-     *
-     * @param str
-     * @return
-     */
-    public static boolean isNumeric(String str) {
 
-        if (null != str && !"".equals(str.trim())) {
-            return str.matches("^[0-9]*$");
-        }
-
-        return false;
-
-    }
 
     /**
      * InputStream转byte数组
