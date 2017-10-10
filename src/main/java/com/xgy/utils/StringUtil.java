@@ -10,9 +10,8 @@ import java.io.UnsupportedEncodingException;
  */
 public class StringUtil {
 
-
     /**
-     * string转换为int，有两种方法
+     * stringת��Ϊint�������ַ���
      *
      * @param str
      * @return
@@ -24,22 +23,20 @@ public class StringUtil {
         return Integer.valueOf(str).intValue();
     }
 
-
     /**
-     * string转换为byte数组，可以设置编码格式
+     * stringת��Ϊbyte���飬�������ñ����ʽ
      *
      * @param str
      * @return
      */
     public static byte[] stringToByte(String str) {
 //        return str.getBytes();
-//        return str.getBytes("UTF-8"); //ASCII等
+//        return str.getBytes("UTF-8"); //ASCII��
         return str.getBytes();
     }
 
-
     /**
-     * 判断字符串是否都是数字
+     * �ж��ַ����Ƿ�������
      *
      * @param str
      * @return
@@ -55,7 +52,7 @@ public class StringUtil {
     }
 
     /**
-     * 判断字符串是否为空
+     * �ж��ַ����Ƿ�Ϊ��
      *
      * @param str
      * @return
@@ -64,9 +61,8 @@ public class StringUtil {
         return null == str || str.length() == 0;
     }
 
-
     /**
-     * 字符校验
+     * �ַ�У��
      *
      * @param c
      * @return
@@ -76,7 +72,7 @@ public class StringUtil {
     }
 
     /**
-     * 字符串反转
+     * �ַ�����ת
      *
      * @param originStr
      * @return
@@ -99,9 +95,6 @@ public class StringUtil {
 
     }
 
-
-
-
     public static class MyString2 {
 
         public static void main(String[] args) {
@@ -111,10 +104,10 @@ public class StringUtil {
 
             String str = "1024";
             // int num = Integer.parseInt(str);
-            int num = Integer.valueOf(str, 16);// ��str�е����ֵ���16���Ƶ�����Ȼ��ת��Ϊint
+            int num = Integer.valueOf(str, 16);// ??str?��????????16????????????????int
             System.out.println(num);
 
-            String s1 = "���";
+            String s1 = "???";
             try {
                 String s2 = new String(s1.getBytes("GB2312"), "ISO-8859-1");
             } catch (UnsupportedEncodingException e) {
@@ -126,7 +119,6 @@ public class StringUtil {
 
             System.out.println(reverse(str));
         }
-
 
 
         public static void testUnicode() {

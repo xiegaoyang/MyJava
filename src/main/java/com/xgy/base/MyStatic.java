@@ -7,9 +7,7 @@ public class MyStatic {
 
     private static int a = 100;
 
-
     public static void main(String[] args) {
         MyStatic myStatic = new MyStatic();
-
     }
 }

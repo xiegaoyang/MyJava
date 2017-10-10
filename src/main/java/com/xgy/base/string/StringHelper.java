@@ -36,7 +36,6 @@ public class StringHelper {
     }
 
 
-
     /**
      * InputStream转byte数组
      *

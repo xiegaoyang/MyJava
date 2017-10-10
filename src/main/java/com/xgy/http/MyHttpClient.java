@@ -39,21 +39,20 @@ public class MyHttpClient {
         System.out.println(sb.toString());
     }
 
-    public boolean GetSingleParameter() {
+    public boolean getSingleParameter() {
         return true;
     }
 
-    public boolean GetMultiParameter() {
+    public boolean getMultiParameter() {
         return true;
     }
 
-    public boolean PostJson() {
+    public boolean postJson() {
         return true;
     }
 
-    public boolean PostXml() {
+    public boolean postXml() {
         return true;
     }
-
 
 }

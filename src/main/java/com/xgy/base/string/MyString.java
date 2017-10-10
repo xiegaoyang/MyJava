@@ -1,8 +1,6 @@
 package com.xgy.base.string;
 
-
 public class MyString {
-
 
     public static void test() {
 
@@ -18,14 +16,9 @@ public class MyString {
 
     }
 
-
     public static void main(String[] args) {
-
         test();
-
-
     }
-
 
 }
 

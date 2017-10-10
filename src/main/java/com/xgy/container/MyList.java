@@ -10,7 +10,7 @@ import java.util.*;
 public class MyList {
 
     public static void test() {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         list.add("123");
         list.add("1234");
         list.add("12345");
@@ -20,9 +20,7 @@ public class MyList {
 //        list.remove(0);
 //        System.out.println(list.size());
 
-
         for (int i = 0; i < list.size(); ++i) {
-
             if (list.get(i).equals("123")) {
                 list.remove(i);
             }
@@ -39,7 +37,6 @@ public class MyList {
         MyList.test();
     }
 
-
     /**
      * 对List对象按照某个成员变量进行排序
      *
@@ -48,7 +45,6 @@ public class MyList {
      * @param sortMode  排序方式：ASC，DESC 任选其一
      */
     public static <T> void sortList(List<T> list, final String sortField, final String sortMode) {
-
         Collections.sort(list, new Comparator<T>() {
             @Override
             public int compare(T o1, T o2) {
@@ -127,4 +123,5 @@ public class MyList {
             }
         });
     }
+
 }

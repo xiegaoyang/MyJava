@@ -128,8 +128,6 @@ public class Java {
     }
 
 
-
-
     public static void TestClass() {
         Integer i = 100;
         System.out.println(i.getClass());

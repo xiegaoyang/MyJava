@@ -23,7 +23,7 @@ public class HttpUtil {
      */
     protected static HttpURLConnection getConnection(String urlName, String method, Map<String, String> paramMap, String data) {
 
-        URL url = null;
+        URL url;
         HttpURLConnection conn = null;
 
         try {
@@ -108,15 +108,14 @@ public class HttpUtil {
         HttpURLConnection conn = getConnection(urlName, method, paramMap, data);
 
         StringBuffer sb = new StringBuffer();
-        String line = "";
+        String line;
 
         BufferedReader in = null;
-        DataOutputStream out = null;
+        DataOutputStream out;
 
         try {
-            in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
             out = new DataOutputStream(conn.getOutputStream());
-
 
             //写入数据
             if (null != data) {
@@ -133,17 +132,14 @@ public class HttpUtil {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-
             try {
                 if (null != in) {
                     in.close();
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
 
         return sb.toString();
     }
@@ -163,9 +159,7 @@ public class HttpUtil {
         DataOutputStream out = null;
 
         try {
-
             out = new DataOutputStream(conn.getOutputStream());
-
             //写入数据
             if (null != data) {
                 out.writeBytes(data);
@@ -173,7 +167,8 @@ public class HttpUtil {
                 out.close();
             }
 
-            if (conn.getResponseCode() != 200) {
+            //响应
+            if (!String.valueOf(conn.getResponseCode()).startsWith("2")) {
                 return null;
             }
 
@@ -185,17 +180,14 @@ public class HttpUtil {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-
             try {
                 if (null != in) {
                     in.close();
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
         return streamToByte(in);
     }
 
